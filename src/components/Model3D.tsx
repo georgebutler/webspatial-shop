@@ -1,15 +1,7 @@
-import {
-  Model,
-  Vec3,
-} from "@webspatial/react-sdk";
+import { Model, ModelProps } from "@webspatial/react-sdk";
 
-export type Model3DProps = {
-  src: string;
-  position: Vec3;
-  scale: Vec3;
-  rotation: Vec3;
-  className?: string
-}
-export default function Model3D({ className, src }: Model3DProps) {
-  return <Model src={src} className={className} enable-xr />;
+export default function Model3D({ className, ...restProps }: ModelProps) {
+  return (
+    <Model enable-xr className={`model3D ${className}`} {...restProps} />
+  );
 }
