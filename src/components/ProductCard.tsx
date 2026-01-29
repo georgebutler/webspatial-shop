@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Model3D from "./Model3D";
 import { Product } from "../data/products";
 import "./ProductCard.css";
