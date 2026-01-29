@@ -13,8 +13,9 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="product-card">
       <Model3D 
-        className="product-3D" {...product} 
+        className="product-3D"
         src={product.model} 
+        imgSrc={product.image}
         onSpatialTap={() => navigate(`/product/${product.id}`)} 
       />
       <h3 className="product-name">{product.name}</h3>
