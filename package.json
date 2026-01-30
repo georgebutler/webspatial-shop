@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "XR_ENV=avp vite",
-    "build": "tsc -b && XR_ENV=avp vite build",
+    "lint": "tsc --build",
+    "build": "npm run lint && XR_ENV=avp vite build",
     "preview": "npm run build && vite preview --host --port 5173",
     "avp": "npm run build && webspatial-builder run --base=http://localhost:5173"
   },
