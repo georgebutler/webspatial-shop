@@ -1,10 +1,11 @@
   /* Product Card */
-  .product-card {
-    padding: 1rem;
-    border-radius: 1rem;
-    background: rgb(from CanvasText r g b / 20%);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+.product-card {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgb(from CanvasText r g b / 20%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  text-decoration: none;
   
   .product-model {
     width: "100px";
@@ -15,6 +16,9 @@
   .product-name {
     margin: 0.75rem 0 0.25rem;
     font-size: 1rem;
+  }
+  &:hover .product-name {
+    text-decoration: underline;
   }
 
   .product-description {
