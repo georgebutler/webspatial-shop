@@ -19,7 +19,7 @@ npm run dev
 ```
 
 Runs on a local HTTPS server at:
-**[https://localhost:5173/webspatial/avp/](https://localhost:5173/webspatial/avp/)**
+**[https://localhost:5173](https://localhost:5173)**
 
 ### **Build for production**
 
@@ -35,12 +35,7 @@ npm run preview
 
 ### Run on Apple Vision Pro simulator
 
-The first time run
-```bash
-npm run build
-```
-
-Then run development server and the Vision Pro simulator
+Run development server and the Vision Pro simulator
 ```bash
 npm run dev
 npm run avp
