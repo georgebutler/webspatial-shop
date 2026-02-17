@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router";
 import { products, Product } from "./data/products";
 import "./ProductPage.css";
 import {
