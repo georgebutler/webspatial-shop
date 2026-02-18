@@ -1,12 +1,9 @@
 .productPage {
-  display: flex;
-  flex-direction: column;
-  min-height: 90vh;
-  padding: 2rem;
-
   .product-3D {
-    width: 500px;
-    height: 450px;
+    margin: auto;
+    width: calc(95vh - 300px);
+    height: calc(95vh - 300px);
     --xr-depth: 400px;
+    --xr-back: 200px;
   }
 }
