@@ -5,7 +5,7 @@ import webspatial from "@webspatial/vite-plugin";
 export default defineConfig({
   plugins: [
     react(),
-    webspatial({ outputDir: "/" }),
+    webspatial({ mode: 'avp', outputDir: "/" }),
   ],
   server: { open: true, host: true },
 });
