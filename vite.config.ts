@@ -7,12 +7,5 @@ export default defineConfig({
     react(),
     webspatial({ mode: 'avp', outputDir: "/" }),
   ],
-  server: {
-    open: true,
-    host: true,
-    headers: {
-      "Cross-Origin-Embedder-Policy": "require-corp",
-      "Cross-Origin-Opener-Policy": "same-origin",
-    },
-  },
+  server: { open: true, host: true },
 });
