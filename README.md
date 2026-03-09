@@ -18,9 +18,6 @@ npm install
 npm run dev
 ```
 
-Runs on a local HTTPS server at:
-**[https://localhost:5173](https://localhost:5173)**
-
 ### **Build for production**
 
 ```bash
@@ -42,8 +39,4 @@ npm run avp
 ```
 
 ### **Deploy to Vercel**
-https://vercel.com/khufu-devs-projects/webspatial-hackathon
-
-```bash
-npx vercel --prod
-```
+Every commit on main is automatically deployed via [Vercel](https://vercel.com/khufu-devs-projects/webspatial-hackathon) to https://webspatial-hackathon.vercel.app.
