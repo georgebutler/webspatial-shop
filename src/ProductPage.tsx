@@ -12,12 +12,16 @@ export default function ProductPage() {
   useEffect(() => {
     let id: number;
     function animate() {
-      modelRef.current?.entityTransform?.rotateSelf(0, 0.5, 0);
+      const { current } = modelRef;
+      if (current) {
+        current.entityTransform = 
+          DOMMatrix.fromMatrix(current.entityTransform).rotateSelf(0, 0.5, 0)
+      }
       id = requestAnimationFrame(animate);
     }
     animate();
     return () => cancelAnimationFrame(id);
-  }, [modelRef.current]);
+  }, []);
 
   if (!product) {
     return (
