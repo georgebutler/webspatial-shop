@@ -38,7 +38,7 @@ npm run dev
 npm run avp
 ```
 
-### Run on Pico OS 6 simulator
+### Run on Pico OS 6 emulator
 
 1. Run development server `npm run dev`
 2. Open [Pico OS 6 emulator](https://developer.picoxr.com/document/spatial-toolkit/install-spatial-plugin/#9e29c5f8). Install Android Studio and Spatial Plugin to obtain Pico OS 6 emulator.
