@@ -11,20 +11,20 @@
     "avp": "npm run build && webspatial-builder run --base=http://localhost:5173"
   },
   "dependencies": {
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "@vitejs/plugin-react": "latest",
     "@webspatial/core-sdk": "latest",
     "@webspatial/react-sdk": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-router": "latest",
-    "typescript": "latest",
-    "vite": "latest"
+    "react-router": "latest"
   },
   "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
     "@types/node": "latest",
+    "typescript": "latest",
     "@webspatial/builder": "latest",
     "@webspatial/platform-visionos": "latest",
+    "vite": "latest",
+    "@vitejs/plugin-react": "latest"
   }
 }
