@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import MainPage from "./MainPage";
 import ProductPage from "./ProductPage";
 
-export default function App() {
+export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
