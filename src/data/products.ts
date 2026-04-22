@@ -1,17 +1,3 @@
-import { Vec3 } from "@webspatial/core-sdk";
-
-const defaultPos: Vec3 = { x: 0.0, y: -0.04, z: 0 };
-const defaultRot: Vec3 = { x: 0, y: 0, z: 0 };
-const defaultScale: Vec3 = { x: 0.1, y: 0.1, z: 0.1 };
-
-const getScale = (num: number) => {
-  return { x: num, y: num, z: num };
-};
-
-const get3 = (x: number, y: number, z: number) => {
-  return { x: x, y: y, z: z };
-};
-
 export const products = [
   {
     id: "20",
@@ -20,9 +6,6 @@ export const products = [
     image: "/img/vehicle-speedster.png",
     description: "Aerodynamic speedster car model.",
     model: "/usdz/vehicle-speedster.usdz",
-    position: defaultPos,
-    scale: defaultScale,
-    rotation: get3(0, 230, 0),
   },
   {
     id: "19",
@@ -31,9 +14,6 @@ export const products = [
     image: "/img/Incandescent_Light_Bulb.png",
     description: "Classic Edison-style bulb model.",
     model: "/usdz/Incandescent_Light_Bulb.usdz",
-    position: { ...defaultPos, y: -0.05 },
-    scale: getScale(0.8),
-    rotation: get3(0, 90, 0),
   },
   {
     id: "18",
@@ -42,9 +22,6 @@ export const products = [
     image: "/img/iPhone_Air.png",
     description: "Lightweight smartphone concept.",
     model: "/usdz/iPhone_Air.usdz",
-    position: { ...defaultPos, y: 0 },
-    scale: getScale(0.8),
-    rotation: get3(0, 90, 0),
   },
   {
     id: "17",
@@ -53,9 +30,6 @@ export const products = [
     image: "/img/Mario_Lego.png",
     description: "Brick-built Mario figure model.",
     model: "/usdz/Mario_Lego.usdz",
-    position: defaultPos,
-    scale: getScale(0.03),
-    rotation: defaultRot,
   },
   {
     id: "16",
@@ -64,9 +38,6 @@ export const products = [
     image: "/img/iPhone_17_Pro_Max_Concept.png",
     description: "High-end iPhone concept model.",
     model: "/usdz/iPhone_17_Pro_Max_Concept.usdz",
-    position: { ...defaultPos, y: 0 },
-    scale: getScale(0.8),
-    rotation: defaultRot,
   },
   {
     id: "15",
@@ -75,9 +46,6 @@ export const products = [
     image: "/img/Phone_17_Pro_Max.png",
     description: "Large smartphone variant model.",
     model: "/usdz/Phone_17_Pro_Max.usdz",
-    position: { ...defaultPos, y: 0 },
-    scale: getScale(0.8),
-    rotation: defaultRot,
   },
   {
     id: "14",
@@ -86,9 +54,6 @@ export const products = [
     image: "/img/Realistic_Laptop_Concept.png",
     description: "Modern laptop concept with slim design.",
     model: "/usdz/Realistic_Laptop_Concept.usdz",
-    position: { ...defaultPos, y: 0 },
-    scale: getScale(0.3),
-    rotation: get3(45, 0, 0),
   },
   {
     id: "13",
@@ -97,9 +62,6 @@ export const products = [
     image: "/img/iPhone_17_Pro.png",
     description: "Flagship smartphone concept.",
     model: "/usdz/iPhone_17_Pro.usdz",
-    position: { ...defaultPos, y: 0 },
-    scale: getScale(0.7),
-    rotation: get3(0, 180, 0),
   },
   {
     id: "12",
@@ -108,9 +70,6 @@ export const products = [
     image: "/img/12_Vinyl_Record.png",
     description: "12-inch vinyl record disc model.",
     model: "/usdz/12_Vinyl_Record.usdz",
-    position: { ...defaultPos, y: 0, z: 0.02 },
-    scale: getScale(0.3),
-    rotation: defaultRot,
   },
   {
     id: "11",
@@ -119,9 +78,6 @@ export const products = [
     image: "/img/Steam_Controller_2025_GabeCube.png",
     description: "Futuristic controller concept for 2025.",
     model: "/usdz/Steam_Controller_2025_GabeCube.usdz",
-    position: { ...defaultPos, y: 0 },
-    scale: getScale(0.08),
-    rotation: defaultRot,
   },
   {
     id: "10",
@@ -130,9 +86,6 @@ export const products = [
     image: "/img/Steam_Controller_2_Concept_V2.png",
     description: "Next-gen Steam controller concept design.",
     model: "/usdz/Steam_Controller_2_Concept_V2.usdz",
-    position: { ...defaultPos, y: 0 },
-    scale: getScale(0.08),
-    rotation: get3(0, 270, 0),
   },
   {
     id: "9",
@@ -141,9 +94,6 @@ export const products = [
     image: "/img/Keyboard_Casio_VL-Tone.png",
     description: "Compact synth keyboard from Casio.",
     model: "/usdz/Keyboard_Casio_VL-Tone.usdz",
-    position: { ...defaultPos, y: 0 },
-    scale: getScale(0.5),
-    rotation: defaultRot,
   },
   {
     id: "8",
@@ -152,9 +102,6 @@ export const products = [
     image: "/img/SEGA_Pluto.png",
     description: "Prototype SEGA console concept.",
     model: "/usdz/SEGA_Pluto.usdz",
-    position: { ...defaultPos, y: 0.0, z: 0.02 },
-    scale: getScale(0.015),
-    rotation: get3(45, 0, 0),
   },
   {
     id: "7",
@@ -163,9 +110,6 @@ export const products = [
     image: "/img/Terminal.png",
     description: "Retro computer terminal device.",
     model: "/usdz/Terminal.usdz",
-    position: defaultPos,
-    scale: getScale(0.05),
-    rotation: defaultRot,
   },
   {
     id: "6",
@@ -174,9 +118,6 @@ export const products = [
     image: "/img/Yamaha_TT-300_Record_Player.png",
     description: "Vintage turntable for vinyl records.",
     model: "/usdz/Yamaha_TT-300_Record_Player.usdz",
-    position: { ...defaultPos, y: 0 },
-    scale: getScale(0.03),
-    rotation: get3(90, 0, 0),
   },
   {
     id: "5",
@@ -185,9 +126,6 @@ export const products = [
     image: "/img/MultiMeter_-_FREE.png",
     description: "Digital multimeter measuring voltage and current.",
     model: "/usdz/MultiMeter_-_FREE.usdz",
-    position: { ...defaultPos, y: 0 },
-    scale: getScale(0.005),
-    rotation: get3(90, 0, 0),
   },
 ] as const;
 
