@@ -1,37 +1,100 @@
-/* Product Card */
 .product-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
+  overflow: hidden;
+  color: #0f172a;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.product-card:hover {
+  border-color: #111111;
+}
+
+.product-card-media {
+  display: block;
+  background: #f8f8f8;
+}
+
+.product-3D {
+  width: 100%;
+  height: 250px;
+  --xr-depth: 140px;
+  border-radius: 0;
+}
+
+.product-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
   padding: 1rem;
-  border-radius: 1rem;
-  background: rgb(from CanvasText r g b / 20%);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  
-  .product-model {
-    width: "100px";
-    height: "200px";
-    --xr-depth: 100;
-  }
+}
 
-  .product-name {
-    margin: 0.75rem 0 0.25rem;
-    font-size: 1rem;
-  }
+.product-category,
+.product-availability {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
 
-  .product-description {
-    margin: 0;
-    font-size: 0.85rem;
-  }
+.product-category {
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
 
-  .product-price {
-    margin: 0.5rem 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
+.product-name {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
 
+.product-description {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.product-price {
+  margin: 0 0 0.2rem;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.product-availability {
+  margin: 0;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.product-card-footer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+@media (max-width: 720px) {
   .product-3D {
-    width: 100%;
-    height: 200px;
-    --xr-depth: 150px;
-    background-color: grey;
+    height: 220px;
+  }
+
+  .product-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

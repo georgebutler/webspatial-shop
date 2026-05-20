@@ -1,59 +1,29 @@
 .mainPage {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
 
-  .header {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
+.shop-header {
+  margin-bottom: 2rem;
+}
 
-  .header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: 700;
-    background-clip: text;
-  }
+.shop-header h1 {
+  margin: 0;
+  color: #111111;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
 
-  .subtitle {
-    margin-top: 0.5rem;
-    font-size: 1.1rem;
-  }
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
 
-  .main {
-    display: flex;
-    gap: 2rem;
-    flex: 1;
-  }
-
-  .products-section {
-    flex: 1;
-  }
-
-  .products-section h2 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
-
-  /* Product List */
-  .product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.5rem;
-  }
-
-  /* Footer */
-  footer {
-    margin-top: 2rem;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-
-  footer a {
-    text-decoration: none;
-  }
-
-  footer a:hover {
-    text-decoration: underline;
+@media (max-width: 720px) {
+  .mainPage {
+    padding: 1.5rem 1rem 3rem;
   }
 }
