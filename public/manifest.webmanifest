@@ -1,6 +1,6 @@
 {
-  "name": "WebSpatial Hackathon",
-  "short_name": "Hackathon",
+  "name": "Shop",
+  "short_name": "Shop",
   "start_url": "/",
   "scope": "/",
   "display": "minimal-ui",

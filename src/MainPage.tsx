@@ -17,24 +17,24 @@ import { products } from "./data/products";
 import { ProductCard } from "./components/ProductCard";
 
 export default function MainPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [selectedCategory, setSelectedCategory] = useState<string>("All products");
 
   const categories = useMemo(
-    () => ["All", ...new Set(products.map((product) => product.category))],
+    () => ["All products", ...new Set(products.map((product) => product.category))],
     []
   );
 
   const filteredProducts = useMemo(
     () =>
-      selectedCategory === "All"
+      selectedCategory === "All products"
         ? products
         : products.filter((product) => product.category === selectedCategory),
     [selectedCategory]
   );
 
   const links = [
-    { label: "New", href: "#products" },
-    { label: "Trending", href: "#products" },
+    { label: "New In", href: "#products" },
+    { label: "Best Sellers", href: "#products" },
     { label: "Collections", href: "#categories" },
   ];
 
@@ -70,12 +70,12 @@ export default function MainPage() {
           <Card>
             <CardHeader>
               <CardTitle>Categories</CardTitle>
-              <CardDescription>Browse curated product groups.</CardDescription>
+              <CardDescription>Shop by department.</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-2">
               {categories.map((category) => {
                 const count =
-                  category === "All"
+                  category === "All products"
                     ? products.length
                     : products.filter((product) => product.category === category).length;
 
@@ -101,8 +101,8 @@ export default function MainPage() {
             <div className="flex flex-col gap-1">
               <h1 className="text-3xl font-semibold tracking-tight text-foreground">Trending items</h1>
               <p className="text-sm text-muted-foreground">
-                {selectedCategory === "All"
-                  ? "Browse the latest products in the shop."
+                {selectedCategory === "All products"
+                  ? "Browse popular picks across every department."
                   : `Browsing ${selectedCategory.toLowerCase()} products.`}
               </p>
             </div>

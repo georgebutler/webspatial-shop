@@ -22,7 +22,7 @@ export function ProductCard({ product }: ProductCardProps) {
   }).format(product.price);
 
   return (
-    <Link to={`/product/${product.id}`} className="group block" aria-label={`View ${product.name}`}>
+    <Link to={`/product/${product.id}`} className="group block h-full" aria-label={`View ${product.name}`}>
       <Card className="h-full gap-4 transition-shadow group-hover:shadow-md">
         <div className="px-6 group-data-[size=sm]/card:px-4">
           <div className="overflow-hidden rounded-lg bg-muted">
@@ -40,7 +40,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <Badge variant="outline">{product.category}</Badge>
           </div>
         </CardHeader>
-        <CardContent className="flex flex-col gap-3">
+        <CardContent className="flex flex-1 flex-col gap-3">
           <p className="text-sm text-muted-foreground">{product.shortDescription}</p>
           <div className="flex items-center justify-between gap-3">
             <div className="flex flex-col gap-1">
@@ -50,7 +50,7 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.badge ? <Badge variant="secondary">{product.badge}</Badge> : null}
           </div>
         </CardContent>
-        <CardFooter className="border-t">
+        <CardFooter className="mt-auto border-t">
           <div className="flex items-center gap-2 text-sm font-medium text-foreground">
             View details
             <ArrowRightIcon />

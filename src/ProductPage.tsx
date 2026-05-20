@@ -38,7 +38,7 @@ export default function ProductPage() {
       <div className="productPage productPage--empty">
         <p className="eyebrow">Catalog</p>
         <h1>Product not found</h1>
-        <p>The product you’re looking for is no longer available in this concept collection.</p>
+        <p>The product you’re looking for is no longer available in the current collection.</p>
         <Link to="/" className="button button-primary">Return to storefront</Link>
       </div>
     );
@@ -107,11 +107,11 @@ export default function ProductPage() {
           <div className="service-panels">
             <div>
               <h3>Shipping</h3>
-              <p>Fast domestic delivery messaging that mirrors a polished retail checkout experience.</p>
+              <p>Free standard shipping on orders over $50, with faster delivery options at checkout.</p>
             </div>
             <div>
               <h3>Returns</h3>
-              <p>30-day returns and simple support language help the detail page feel complete and trustworthy.</p>
+              <p>Return eligible items within 30 days in new or gently used condition.</p>
             </div>
           </div>
         </article>
@@ -120,7 +120,7 @@ export default function ProductPage() {
       <section className="product-details-grid">
         <article className="detail-panel">
           <p className="eyebrow">Key highlights</p>
-          <h2>Designed for a believable premium product page.</h2>
+          <h2>Why you’ll like it</h2>
           <ul className="highlight-list">
             {product.highlights.map((highlight) => (
               <li key={highlight}>{highlight}</li>

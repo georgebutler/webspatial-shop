@@ -1,8 +1,6 @@
-# WebSpatial Hackathon
+# Modern Storefront
 
-[WebSpatial Production](https://webspatial-hackathon.vercel.app)
-
-A WebSpatial Hackathon application for visionOS and Pico OS 6, built with React, TypeScript, and Vite. This was built for the December 2025 Hackathon.
+A modern e-commerce storefront for visionOS and Pico OS 6, built with React, TypeScript, and Vite.
 
 ##  Getting Started
 
@@ -37,4 +35,4 @@ npm run preview
 ```
 
 ### **Deploy to Vercel**
-Every commit on main is automatically deployed via [Vercel](https://vercel.com/khufu-devs-projects/webspatial-hackathon) to https://webspatial-hackathon.vercel.app.
+Every commit on main is automatically deployed via Vercel to the production storefront URL.
