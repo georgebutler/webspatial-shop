@@ -1,5 +1,9 @@
 # Dependency directories
 node_modules/
+.npm-cache/
+
+# Local model source archives
+public/model-zips/
 
 # TypeScript cache
 *.tsbuildinfo
