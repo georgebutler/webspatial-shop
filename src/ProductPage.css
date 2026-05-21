@@ -58,13 +58,15 @@
 .product-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+  align-items: start;
   gap: 2rem;
   padding: 1.5rem;
 }
 
 .product-3D {
   width: 100%;
-  min-height: 440px;
+  height: clamp(360px, 42vw, 520px);
+  max-height: 520px;
   border-radius: 1.25rem;
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 56%),
@@ -327,7 +329,7 @@
   }
 
   .product-3D {
-    min-height: 320px;
+    height: 320px;
   }
 
   .service-panels,
