@@ -84,7 +84,6 @@ export default function ProductPage() {
               alt={product.name}
               ref={modelRef}
             />
-            <p className="spatial-note">Interactive 3D preview</p>
           </div>
           <article className="product-summary">
             <div className="product-summary-header">

@@ -14,3 +14,4 @@ dist/
 # Ignore IDE project files
 *.sublime-workspace
 .DS_Store
+.vercel
