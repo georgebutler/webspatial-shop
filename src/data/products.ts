@@ -33,7 +33,7 @@ export const products: Product[] = [
     shortDescription: "A compact cordless drill for simple repairs, assembly, and weekend projects.",
     description:
       "A balanced cordless drill for common household tasks, garage projects, and basic workshop use.",
-    model: "/models/cordless-drill/Drill_01_1k.usdz",
+    model: "/models/cordless-drill/Drill_01_1k.glb",
     badge: "Best Seller",
     rating: 4.8,
     reviews: 1864,
@@ -62,7 +62,7 @@ export const products: Product[] = [
     shortDescription: "A wooden tabletop game set for coffee tables, quiet evenings, and gifting.",
     description:
       "A polished board and matching pieces create a familiar tabletop game set for relaxed play at home.",
-    model: "/models/classic-chess-set/chess_set_1k.usdz",
+    model: "/models/classic-chess-set/chess_set.glb",
     badge: "Top Rated",
     rating: 4.9,
     reviews: 942,
@@ -91,7 +91,7 @@ export const products: Product[] = [
     shortDescription: "A portable announcement speaker for events, practices, and group activities.",
     description:
       "A handheld announcement speaker helps messages carry during outdoor activities, group events, and organized gatherings.",
-    model: "/models/portable-megaphone/Megaphone_01_1k.usdz",
+    model: "/models/portable-megaphone/Megaphone_01_1k.glb",
     rating: 4.5,
     reviews: 517,
     availability: "In stock",
@@ -119,7 +119,7 @@ export const products: Product[] = [
     shortDescription: "A ready-to-style greenery accent for desks, shelves, windowsills, and entryways.",
     description:
       "A compact potted plant adds a fresh accent to desks, side tables, shelves, and entryway surfaces.",
-    model: "/models/potted-plant/potted_plant_02_1k.usdz",
+    model: "/models/potted-plant/potted_plant_02_1k.glb",
     badge: "New",
     rating: 4.7,
     reviews: 728,
@@ -148,7 +148,7 @@ export const products: Product[] = [
     shortDescription: "A small outdoor accent for planters, pathways, patios, and garden beds.",
     description:
       "A compact decorative figure adds a lighthearted focal point to outdoor spaces and garden displays.",
-    model: "/models/garden-gnome/garden_gnome_1k.usdz",
+    model: "/models/garden-gnome/garden_gnome_1k.glb",
     rating: 4.6,
     reviews: 389,
     availability: "In stock",
@@ -176,7 +176,7 @@ export const products: Product[] = [
     shortDescription: "A garage shelf staple for hinges, hardware, and basic household maintenance.",
     description:
       "A practical maintenance spray for quick fixes around the home, garage, workshop, or utility closet.",
-    model: "/models/lubricant-spray/lubricant_spray_1k.usdz",
+    model: "/models/lubricant-spray/lubricant_spray_1k.glb",
     badge: "Value Pick",
     rating: 4.4,
     reviews: 1206,

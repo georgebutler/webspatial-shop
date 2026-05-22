@@ -1,38 +1,157 @@
-# Modern Storefront
+# WebSpatial Storefront Starter
 
-A modern e-commerce storefront for visionOS and Pico OS 6, built with React, TypeScript, and Vite.
+A guided getting-started project for building spatial web experiences with React, Vite, TypeScript, and the WebSpatial SDK.
 
-##  Getting Started
+This project is a small e-commerce storefront that demonstrates how a familiar 2D web interface can progressively become a spatial experience. Product cards and detail pages render ordinary thumbnail images in unsupported browsers, then switch to interactive spatial 3D models when the app is running in a WebSpatial-capable environment.
+
+## What you will learn
+
+- How to scaffold a React + Vite app for WebSpatial experiments.
+- How to render WebSpatial 3D models with `@webspatial/react-sdk`.
+- How to safely fall back to standard HTML images when WebSpatial is unavailable.
+- How to structure public 3D assets for a storefront-style demo.
+- How to run the same project in a normal browser, Apple Vision Pro tooling, and Pico OS 6.
+- How to build and deploy the finished app to Vercel.
+
+## Demo concept
+
+The app presents a modern storefront with a small product catalog. Each product has:
+
+- Storefront metadata such as name, price, category, rating, and availability.
+- A thumbnail image for regular browsers.
+- A 3D model asset for WebSpatial-enabled rendering.
+- A product detail route with supporting copy, specs, and related products.
+
+The core progressive-enhancement behavior lives in `src/components/Model3D.tsx`. It checks whether WebSpatial is available through `@webspatial/core-sdk`; if it is, the app renders a WebSpatial `<Model>`. If not, it renders the product thumbnail instead.
+
+## Tech stack
+
+- React
+- TypeScript
+- Vite
+- React Router
+- Tailwind CSS
+- shadcn/ui-style primitives
+- WebSpatial SDK
+- Vercel deployment
+
+## Project structure
+
+```text
+public/
+  models/                 3D product assets and thumbnails
+src/
+  components/Model3D.tsx  WebSpatial model renderer with image fallback
+  components/ProductCard.tsx
+  data/products.ts        Product catalog and model asset paths
+  MainPage.tsx            Storefront/catalog page
+  ProductPage.tsx         Product detail page
+  Router.tsx              App routes
+```
+
+## Prerequisites
+
+- Node.js
+- npm
+- A modern Chromium or Safari browser for regular web preview
+- Optional: Apple Vision Pro simulator tooling for visionOS testing
+- Optional: Pico OS 6 emulator for Pico testing
+
+## Getting started
+
+Install dependencies:
 
 ```bash
-# Install dependencies
 npm install
-# Start development server
+```
+
+Start the local development server:
+
+```bash
 npm run dev
 ```
 
-### Run on Apple Vision Pro simulator
+Open the local URL printed by Vite, usually:
 
-Run development server and the Vision Pro simulator
+```text
+http://localhost:5173
+```
+
+In a normal browser, the product media areas intentionally show thumbnail images instead of loading 3D models. This keeps the baseline web experience simple and avoids relying on spatial browser APIs where they are not supported.
+
+## Running on Apple Vision Pro tooling
+
+Build the app and launch it through the WebSpatial builder flow:
+
 ```bash
-npm run dev
 npm run avp
 ```
 
-### Run on Pico OS 6 emulator
+This script builds the Vite app and runs:
 
-1. Run development server `npm run dev`
-2. Open [Pico OS 6 emulator](https://developer.picoxr.com/document/spatial-toolkit/install-spatial-plugin/#9e29c5f8). Install Android Studio and Spatial Plugin to obtain Pico OS 6 emulator.
-2. Inside the emulator navigate to http://10.0.2.2:5173 in the Browser
-3. Click **Open as an app** in the URL bar
-
-## Production
 ```bash
-# Build for production
+webspatial-builder run --base=http://localhost:5173
+```
+
+Use this path when you want to validate the WebSpatial model rendering path.
+
+## Running on Pico OS 6
+
+1. Start the Vite dev server:
+
+   ```bash
+   npm run dev
+   ```
+
+2. Open the Pico OS 6 emulator.
+3. In the emulator browser, navigate to:
+
+   ```text
+   http://10.0.2.2:5173
+   ```
+
+4. Use the browser option to open the site as an app.
+
+Pico or other unsupported browser environments should use the thumbnail fallback unless WebSpatial support is available.
+
+## Building for production
+
+Run the TypeScript check and production build:
+
+```bash
 npm run build
-# Preview production build
+```
+
+Preview the production build locally:
+
+```bash
 npm run preview
 ```
 
-### **Deploy to Vercel**
-Every commit on main is automatically deployed via Vercel to the production storefront URL.
+## Deploying
+
+The project is ready to deploy to Vercel:
+
+```bash
+vercel deploy --prod
+```
+
+If you connect the repository to a Vercel project, pushes to the production branch can trigger production deployments automatically.
+
+## Guided project ideas
+
+Use this starter as a foundation for learning WebSpatial by trying these exercises:
+
+1. Add another product to `src/data/products.ts` with a thumbnail and model asset.
+2. Adjust `Model3D` so unsupported browsers show a custom callout next to the thumbnail.
+3. Add spatial interactions such as tap, drag, rotate, or magnify handlers to supported model views.
+4. Experiment with model scale and depth using the CSS custom properties on the product media containers.
+5. Replace the sample storefront copy with your own product domain.
+
+## Asset notes
+
+The sample catalog uses public product-style 3D assets and generated derivatives stored under `public/models`. If you open-source or redistribute a modified version of this project, review the license requirements for any assets you add or replace.
+
+## License
+
+Add your preferred open-source license before publishing this repository.
