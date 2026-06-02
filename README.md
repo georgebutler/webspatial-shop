@@ -1,4 +1,4 @@
-# WebSpatial Storefront Starter
+# WebSpatial Shop
 
 A guided getting-started project for building spatial web experiences with React, Vite, TypeScript, and the WebSpatial SDK.
 

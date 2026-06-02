@@ -1,0 +1,527 @@
+.tutorialPage {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 34rem),
+    radial-gradient(circle at 85% 12%, rgba(168, 85, 247, 0.14), transparent 30rem),
+    linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  color: #0f172a;
+}
+
+.tutorialTopbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(255, 255, 255, 0.88);
+  padding: 1rem max(1.5rem, calc((100vw - 1280px) / 2));
+  backdrop-filter: blur(16px);
+}
+
+.tutorialLogo,
+.tutorialNav a {
+  color: #0f172a;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tutorialLogo {
+  font-size: 1.05rem;
+  letter-spacing: -0.03em;
+}
+
+.tutorialNav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.9rem;
+}
+
+.tutorialNav a:not(:last-child)::after {
+  margin-left: 0.85rem;
+  color: #94a3b8;
+  content: "/";
+}
+
+.tutorialMain {
+  display: grid;
+  gap: 2.5rem;
+  width: min(1280px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.tutorialHero,
+.tutorialDiagram,
+.takeawayStrip {
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+}
+
+.tutorialHero {
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+.tutorialBadge {
+  width: fit-content;
+}
+
+.tutorialHero h1 {
+  max-width: 980px;
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.tutorialHero p,
+.tutorialSectionHeader p {
+  max-width: 780px;
+  color: #475569;
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.tutorialHeroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tutorialSection {
+  display: grid;
+  gap: 1rem;
+}
+
+.tutorialSectionHeader {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.tutorialSectionHeader h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.tutorialDiagram {
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.spatialFlow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.browserFrame,
+.spatialFrame {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  border-radius: 1.2rem;
+  padding: 1rem;
+}
+
+.browserFrame {
+  display: grid;
+  align-content: end;
+  gap: 0.55rem;
+  background: #f8fafc;
+}
+
+.browserFrame strong,
+.spatialFrame strong {
+  position: relative;
+  z-index: 2;
+  font-size: 1.2rem;
+}
+
+.browserFrame p,
+.spatialFrame p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #64748b;
+}
+
+.frameChrome {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.35rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.75rem;
+}
+
+.frameChrome span {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  background: #94a3b8;
+}
+
+.browserHero {
+  position: absolute;
+  top: 4rem;
+  left: 1rem;
+  right: 1rem;
+  height: 5.5rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+}
+
+.browserGrid {
+  position: absolute;
+  top: 10.25rem;
+  right: 1rem;
+  left: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.browserGrid span {
+  height: 5.5rem;
+  border-radius: 0.9rem;
+  background: linear-gradient(180deg, #e2e8f0, #f8fafc);
+}
+
+.flowArrow {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 900;
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.18);
+}
+
+.spatialFrame {
+  display: grid;
+  align-content: end;
+  gap: 0.55rem;
+  background:
+    radial-gradient(circle at 55% 20%, rgba(129, 140, 248, 0.35), transparent 11rem),
+    linear-gradient(145deg, #0f172a, #1e293b);
+  color: #f8fafc;
+}
+
+.spatialFrame p {
+  color: #cbd5e1;
+}
+
+.spatialWindow {
+  position: absolute;
+  border: 1px solid rgba(226, 232, 240, 0.24);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 90px rgba(2, 6, 23, 0.34);
+}
+
+.spatialWindow--back {
+  top: 3.2rem;
+  left: 2.25rem;
+  width: 48%;
+  height: 8rem;
+  transform: perspective(600px) rotateY(18deg) translateZ(-30px);
+}
+
+.spatialWindow--front {
+  top: 4.7rem;
+  right: 2rem;
+  display: grid;
+  place-items: center;
+  width: 52%;
+  height: 10rem;
+  transform: perspective(600px) rotateY(-16deg) translateZ(40px);
+}
+
+.spatialObject,
+.xrModel {
+  display: block;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #f97316, #facc15);
+  box-shadow: 0 28px 60px rgba(249, 115, 22, 0.4);
+  transform: rotateX(58deg) rotateZ(42deg);
+}
+
+.tutorialGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.tutorialGrid--architecture {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.tutorialInfoCard,
+.tutorialCodeCard,
+.scriptCard {
+  border-color: rgba(148, 163, 184, 0.28);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.tutorialCompare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.tutorialCompare article {
+  display: grid;
+  gap: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.2rem;
+  background: #f8fafc;
+  padding: 1rem;
+}
+
+.tutorialCompare h3 {
+  margin: 0;
+  font-size: 1.65rem;
+  letter-spacing: -0.04em;
+}
+
+.tutorialCompare ul,
+.aiWorkflow ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #475569;
+  line-height: 1.75;
+}
+
+.fallbackPreview,
+.xrPreview {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.fallbackPreview {
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.9), transparent 8rem),
+    linear-gradient(180deg, #e2e8f0, #f8fafc);
+}
+
+.fallbackPreview img {
+  max-width: 78%;
+  max-height: 180px;
+  object-fit: contain;
+}
+
+.xrPreview {
+  position: relative;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(59, 130, 246, 0.28), transparent 9rem),
+    linear-gradient(145deg, #111827, #1e293b);
+}
+
+.xrShadow {
+  position: absolute;
+  bottom: 3rem;
+  width: 7rem;
+  height: 1.3rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.45);
+  filter: blur(8px);
+}
+
+.tutorialCodeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1rem;
+}
+
+.codeBlock {
+  overflow-x: auto;
+  border-radius: 0.9rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 1rem;
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+.aiWorkflow {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.promptBubble {
+  border-radius: 1.2rem;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 1.5rem;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 850;
+  letter-spacing: -0.05em;
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.18);
+}
+
+.scriptList {
+  display: grid;
+  gap: 1rem;
+}
+
+.scriptCardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.scriptCardMeta span {
+  color: #64748b;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.78rem;
+}
+
+.scriptNarration {
+  color: #1e293b;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.tutorialCue {
+  margin-top: 1rem;
+  border-left: 4px solid #2563eb;
+  color: #475569;
+  padding-left: 0.85rem;
+  font-weight: 750;
+}
+
+.takeawayStrip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+}
+
+.takeawayStrip article {
+  display: grid;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.78);
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.takeawayStrip span {
+  color: #2563eb;
+  font-weight: 900;
+}
+
+.takeawayStrip h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.04em;
+}
+
+.takeawayStrip p {
+  margin: 0;
+  color: #475569;
+}
+
+html.isSpatial .tutorialPage {
+  background: transparent;
+}
+
+html.isSpatial .tutorialTopbar,
+html.isSpatial .tutorialHero,
+html.isSpatial .tutorialDiagram,
+html.isSpatial .takeawayStrip,
+html.isSpatial .tutorialInfoCard,
+html.isSpatial .tutorialCodeCard,
+html.isSpatial .scriptCard {
+  border-color: rgba(226, 232, 240, 0.22);
+  background: rgba(15, 23, 42, 0.72);
+  color: #f8fafc;
+}
+
+html.isSpatial .tutorialLogo,
+html.isSpatial .tutorialNav a,
+html.isSpatial .tutorialSectionHeader h2,
+html.isSpatial .scriptNarration {
+  color: #f8fafc;
+}
+
+html.isSpatial .tutorialHero p,
+html.isSpatial .tutorialSectionHeader p,
+html.isSpatial .tutorialCue,
+html.isSpatial .takeawayStrip p,
+html.isSpatial .tutorialCompare ul,
+html.isSpatial .aiWorkflow ol,
+html.isSpatial .scriptCardMeta span {
+  color: #cbd5e1;
+}
+
+html.isSpatial .tutorialCompare article,
+html.isSpatial .takeawayStrip article {
+  border-color: rgba(226, 232, 240, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 860px) {
+  .tutorialTopbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .spatialFlow,
+  .tutorialCompare,
+  .aiWorkflow,
+  .takeawayStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .flowArrow {
+    margin: 0 auto;
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 560px) {
+  .tutorialMain {
+    width: min(100% - 1.5rem, 1280px);
+    padding-top: 1rem;
+  }
+
+  .tutorialHero h1 {
+    font-size: clamp(2.5rem, 18vw, 4rem);
+  }
+
+  .browserFrame,
+  .spatialFrame {
+    min-height: 280px;
+  }
+
+  .browserGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .browserGrid span {
+    height: 2.6rem;
+  }
+}

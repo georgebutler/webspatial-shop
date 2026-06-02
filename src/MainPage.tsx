@@ -52,11 +52,16 @@ export default function MainPage() {
               <span className="text-sm text-muted-foreground">Search products and departments</span>
             </div>
 
-            <Button variant="outline" className="justify-center md:w-auto">
-              <ShoppingCartIcon data-icon="inline-start" />
-              Cart
-              <Badge variant="secondary">2</Badge>
-            </Button>
+            <div className="flex flex-col gap-2 sm:flex-row">
+              <Button asChild variant="outline" className="justify-center md:w-auto">
+                <Link to="/tutorial">WebSpatial tutorial</Link>
+              </Button>
+              <Button variant="outline" className="justify-center md:w-auto">
+                <ShoppingCartIcon data-icon="inline-start" />
+                Cart
+                <Badge variant="secondary">2</Badge>
+              </Button>
+            </div>
           </div>
 
           <Separator />
