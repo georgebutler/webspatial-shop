@@ -53,9 +53,6 @@ export default function MainPage() {
             </div>
 
             <div className="flex flex-col gap-2 sm:flex-row">
-              <Button asChild variant="outline" className="justify-center md:w-auto">
-                <Link to="/tutorial">WebSpatial tutorial</Link>
-              </Button>
               <Button variant="outline" className="justify-center md:w-auto">
                 <ShoppingCartIcon data-icon="inline-start" />
                 Cart

@@ -10,7 +10,7 @@ This project is a small e-commerce storefront that demonstrates how a familiar 2
 - How to render WebSpatial 3D models with `@webspatial/react-sdk`.
 - How to safely fall back to standard HTML images when WebSpatial is unavailable.
 - How to structure public 3D assets for a storefront-style demo.
-- How to run the same project in a normal browser, Apple Vision Pro tooling, and Pico OS 6.
+- How to run the same project in a normal browser and WebSpatial preview tooling.
 - How to build and deploy the finished app to Vercel.
 
 ## Demo concept
@@ -55,7 +55,6 @@ src/
 - npm
 - A modern Chromium or Safari browser for regular web preview
 - Optional: Apple Vision Pro simulator tooling for visionOS testing
-- Optional: Pico OS 6 emulator for Pico testing
 
 ## Getting started
 
@@ -79,6 +78,19 @@ http://localhost:5173
 
 In a normal browser, the product media areas intentionally show thumbnail images instead of loading 3D models. This keeps the baseline web experience simple and avoids relying on spatial browser APIs where they are not supported.
 
+## Walkthrough
+
+This sample uses progressive enhancement rather than a separate XR-only app:
+
+1. `src/data/products.ts` stores normal product metadata alongside thumbnail and GLB model paths.
+2. `src/components/Model3D.tsx` checks whether the app is running in a WebSpatial-capable environment.
+3. In regular browsers, product media renders accessible thumbnail images.
+4. In WebSpatial-capable runtimes, the same component renders a WebSpatial `<Model enable-xr>` with the thumbnail as fallback content.
+5. `src/ProductPage.tsx` uses a `ModelRef` to animate supported spatial models on the detail page.
+6. `public/manifest.webmanifest` declares the XR main scene size used by spatial launch contexts.
+
+For a video or code walkthrough, start with `src/components/Model3D.tsx`, then follow the data flow from `src/data/products.ts` into `src/components/ProductCard.tsx` and `src/ProductPage.tsx`.
+
 ## Running on Apple Vision Pro tooling
 
 Build the app and launch it through the WebSpatial builder flow:
@@ -94,25 +106,6 @@ webspatial-builder run --base=http://localhost:5173
 ```
 
 Use this path when you want to validate the WebSpatial model rendering path.
-
-## Running on Pico OS 6
-
-1. Start the Vite dev server:
-
-   ```bash
-   npm run dev
-   ```
-
-2. Open the Pico OS 6 emulator.
-3. In the emulator browser, navigate to:
-
-   ```text
-   http://10.0.2.2:5173
-   ```
-
-4. Use the browser option to open the site as an app.
-
-Pico or other unsupported browser environments should use the thumbnail fallback unless WebSpatial support is available.
 
 ## Building for production
 
@@ -148,10 +141,21 @@ Use this starter as a foundation for learning WebSpatial by trying these exercis
 4. Experiment with model scale and depth using the CSS custom properties on the product media containers.
 5. Replace the sample storefront copy with your own product domain.
 
-## Asset notes
+## Asset attribution
 
-The sample catalog uses public product-style 3D assets and generated derivatives stored under `public/models`. If you open-source or redistribute a modified version of this project, review the license requirements for any assets you add or replace.
+The sample catalog uses public product-style 3D assets from Poly Haven. Generated thumbnails and converted GLB files are included under `public/models` for sample convenience.
+
+- Drill 01: <https://polyhaven.com/a/drill_01>
+- Chess Set: <https://polyhaven.com/a/chess_set>
+- Megaphone 01: <https://polyhaven.com/a/megaphone_01>
+- Potted Plant 02: <https://polyhaven.com/a/potted_plant_02>
+- Garden Gnome: <https://polyhaven.com/a/garden_gnome>
+- Lubricant Spray: <https://polyhaven.com/a/lubricant_spray>
+
+If you redistribute this project or replace the sample assets, review the license and attribution requirements for any assets you add.
 
 ## License
 
-Add your preferred open-source license before publishing this repository.
+Source code in this repository is intended to be published under the MIT License. Add the matching `LICENSE` file before public release.
+
+The included 3D assets remain subject to their source asset licenses. See [Asset attribution](#asset-attribution) for source links.

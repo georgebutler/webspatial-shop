@@ -22,6 +22,8 @@ export type Product = {
   specs: ProductSpec[];
 };
 
+const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 export const products: Product[] = [
   {
     id: "compact-cordless-drill",
@@ -29,11 +31,11 @@ export const products: Product[] = [
     category: "Tools & Home Improvement",
     price: 119,
     // Source: https://polyhaven.com/a/drill_01
-    image: "/models/cordless-drill/thumbnail.png",
+    image: publicAsset("/models/cordless-drill/thumbnail.png"),
     shortDescription: "A compact cordless drill for simple repairs, assembly, and weekend projects.",
     description:
       "A balanced cordless drill for common household tasks, garage projects, and basic workshop use.",
-    model: "/models/cordless-drill/Drill_01_1k.glb",
+    model: publicAsset("/models/cordless-drill/Drill_01_1k.glb"),
     badge: "Best Seller",
     rating: 4.8,
     reviews: 1864,
@@ -58,11 +60,11 @@ export const products: Product[] = [
     category: "Games & Hobbies",
     price: 64,
     // Source: https://polyhaven.com/a/chess_set
-    image: "/models/classic-chess-set/thumbnail.png",
+    image: publicAsset("/models/classic-chess-set/thumbnail.png"),
     shortDescription: "A wooden tabletop game set for coffee tables, quiet evenings, and gifting.",
     description:
       "A polished board and matching pieces create a familiar tabletop game set for relaxed play at home.",
-    model: "/models/classic-chess-set/chess_set.glb",
+    model: publicAsset("/models/classic-chess-set/chess_set.glb"),
     badge: "Top Rated",
     rating: 4.9,
     reviews: 942,
@@ -87,11 +89,11 @@ export const products: Product[] = [
     category: "Electronics",
     price: 48,
     // Source: https://polyhaven.com/a/megaphone_01
-    image: "/models/portable-megaphone/thumbnail.png",
+    image: publicAsset("/models/portable-megaphone/thumbnail.png"),
     shortDescription: "A portable announcement speaker for events, practices, and group activities.",
     description:
       "A handheld announcement speaker helps messages carry during outdoor activities, group events, and organized gatherings.",
-    model: "/models/portable-megaphone/Megaphone_01_1k.glb",
+    model: publicAsset("/models/portable-megaphone/Megaphone_01_1k.glb"),
     rating: 4.5,
     reviews: 517,
     availability: "In stock",
@@ -115,11 +117,11 @@ export const products: Product[] = [
     category: "Home Decor",
     price: 38,
     // Source: https://polyhaven.com/a/potted_plant_02
-    image: "/models/potted-plant/thumbnail.png",
+    image: publicAsset("/models/potted-plant/thumbnail.png"),
     shortDescription: "A ready-to-style greenery accent for desks, shelves, windowsills, and entryways.",
     description:
       "A compact potted plant adds a fresh accent to desks, side tables, shelves, and entryway surfaces.",
-    model: "/models/potted-plant/potted_plant_02_1k.glb",
+    model: publicAsset("/models/potted-plant/potted_plant_02_1k.glb"),
     badge: "New",
     rating: 4.7,
     reviews: 728,
@@ -144,11 +146,11 @@ export const products: Product[] = [
     category: "Patio & Garden",
     price: 42,
     // Source: https://polyhaven.com/a/garden_gnome
-    image: "/models/garden-gnome/thumbnail.png",
+    image: publicAsset("/models/garden-gnome/thumbnail.png"),
     shortDescription: "A small outdoor accent for planters, pathways, patios, and garden beds.",
     description:
       "A compact decorative figure adds a lighthearted focal point to outdoor spaces and garden displays.",
-    model: "/models/garden-gnome/garden_gnome_1k.glb",
+    model: publicAsset("/models/garden-gnome/garden_gnome_1k.glb"),
     rating: 4.6,
     reviews: 389,
     availability: "In stock",
@@ -172,11 +174,11 @@ export const products: Product[] = [
     category: "Tools & Home Improvement",
     price: 12,
     // Source: https://polyhaven.com/a/lubricant_spray
-    image: "/models/lubricant-spray/thumbnail.png",
+    image: publicAsset("/models/lubricant-spray/thumbnail.png"),
     shortDescription: "A garage shelf staple for hinges, hardware, and basic household maintenance.",
     description:
       "A practical maintenance spray for quick fixes around the home, garage, workshop, or utility closet.",
-    model: "/models/lubricant-spray/lubricant_spray_1k.glb",
+    model: publicAsset("/models/lubricant-spray/lubricant_spray_1k.glb"),
     badge: "Value Pick",
     rating: 4.4,
     reviews: 1206,
