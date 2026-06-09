@@ -1,60 +1,63 @@
 # WebSpatial Shop
 
-A guided getting-started project for building spatial web experiences with React, Vite, TypeScript, and the WebSpatial SDK.
+WebSpatial Shop is a React storefront demo that shows how a conventional ecommerce experience can progressively become spatial. It presents a small catalog of everyday products with responsive browsing, detail pages, thumbnail fallbacks, and WebSpatial-powered 3D model previews for supported runtimes.
 
-This project is a small e-commerce storefront that demonstrates how a familiar 2D web interface can progressively become a spatial experience. Product cards and detail pages render ordinary thumbnail images in unsupported browsers, then switch to interactive spatial 3D models when the app is running in a WebSpatial-capable environment.
+The project is designed as a practical reference for building spatial web interfaces without abandoning standard web delivery. It works as a normal Vite app in desktop and mobile browsers, then upgrades product media to interactive WebSpatial models when launched in a compatible spatial environment.
 
-## What you will learn
+## Highlights
 
-- How to scaffold a React + Vite app for WebSpatial experiments.
-- How to render WebSpatial 3D models with `@webspatial/react-sdk`.
-- How to safely fall back to standard HTML images when WebSpatial is unavailable.
-- How to structure public 3D assets for a storefront-style demo.
-- How to run the same project in a normal browser and WebSpatial preview tooling.
-- How to build and deploy the finished app to Vercel.
+- Responsive storefront with category filters, product cards, and product detail routes.
+- Product catalog data model with prices, ratings, availability, highlights, specs, thumbnails, and GLB asset paths.
+- Progressive 3D rendering through `@webspatial/react-sdk` with image fallbacks for unsupported browsers.
+- Detail-page model animation using WebSpatial model refs when spatial rendering is available.
+- Sample public product assets organized for static hosting and Vercel deployment.
+- Vite, React, TypeScript, Tailwind CSS, and shadcn/ui-style primitives.
 
-## Demo concept
+## Demo experience
 
-The app presents a modern storefront with a small product catalog. Each product has:
+The app behaves like a lightweight online shop:
 
-- Storefront metadata such as name, price, category, rating, and availability.
-- A thumbnail image for regular browsers.
-- A 3D model asset for WebSpatial-enabled rendering.
-- A product detail route with supporting copy, specs, and related products.
+1. Visitors land on a catalog page with department filters and featured product cards.
+2. Each product card links to a detail page with price, rating, stock status, options, highlights, and specs.
+3. In regular browsers, product media renders thumbnail images so the app remains fast and accessible.
+4. In WebSpatial-capable runtimes, the same media component renders a WebSpatial `<Model enable-xr>` using the product GLB file.
 
-The core progressive-enhancement behavior lives in `src/components/Model3D.tsx`. It checks whether WebSpatial is available through `@webspatial/core-sdk`; if it is, the app renders a WebSpatial `<Model>`. If not, it renders the product thumbnail instead.
+The progressive rendering logic lives in `src/components/Model3D.tsx`. Product content and asset references live in `src/data/products.ts`.
 
 ## Tech stack
 
-- React
+- React 19
 - TypeScript
 - Vite
 - React Router
 - Tailwind CSS
-- shadcn/ui-style primitives
+- shadcn/ui-style components
 - WebSpatial SDK
-- Vercel deployment
+- Vercel-ready static deployment
 
 ## Project structure
 
 ```text
 public/
-  models/                 3D product assets and thumbnails
+  manifest.webmanifest        Spatial launch metadata
+  models/                     Product thumbnails and GLB models
 src/
-  components/Model3D.tsx  WebSpatial model renderer with image fallback
-  components/ProductCard.tsx
-  data/products.ts        Product catalog and model asset paths
-  MainPage.tsx            Storefront/catalog page
-  ProductPage.tsx         Product detail page
-  Router.tsx              App routes
+  components/
+    Model3D.tsx               WebSpatial model renderer with image fallback
+    ProductCard.tsx           Catalog card UI
+    ui/                       Reusable UI primitives
+  data/products.ts            Product catalog and static asset paths
+  MainPage.tsx                Storefront and category filtering
+  ProductPage.tsx             Product detail page and model animation
+  Router.tsx                  App route definitions
 ```
 
 ## Prerequisites
 
 - Node.js
 - npm
-- A modern Chromium or Safari browser for regular web preview
-- Optional: Apple Vision Pro simulator tooling for visionOS testing
+- A modern browser for the standard web preview
+- Optional: WebSpatial / visionOS tooling for spatial preview
 
 ## Getting started
 
@@ -64,82 +67,69 @@ Install dependencies:
 npm install
 ```
 
-Start the local development server:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Open the local URL printed by Vite, usually:
+Open the local Vite URL, typically:
 
 ```text
 http://localhost:5173
 ```
 
-In a normal browser, the product media areas intentionally show thumbnail images instead of loading 3D models. This keeps the baseline web experience simple and avoids relying on spatial browser APIs where they are not supported.
+## Available scripts
 
-## Walkthrough
+```bash
+npm run dev      # Start the Vite development server
+npm run lint     # Run the TypeScript build check
+npm run build    # Type-check and create a production build
+npm run preview  # Build and preview the production app locally
+npm run avp      # Build and launch through the WebSpatial builder flow
+```
 
-This sample uses progressive enhancement rather than a separate XR-only app:
+## Running with WebSpatial tooling
 
-1. `src/data/products.ts` stores normal product metadata alongside thumbnail and GLB model paths.
-2. `src/components/Model3D.tsx` checks whether the app is running in a WebSpatial-capable environment.
-3. In regular browsers, product media renders accessible thumbnail images.
-4. In WebSpatial-capable runtimes, the same component renders a WebSpatial `<Model enable-xr>` with the thumbnail as fallback content.
-5. `src/ProductPage.tsx` uses a `ModelRef` to animate supported spatial models on the detail page.
-6. `public/manifest.webmanifest` declares the XR main scene size used by spatial launch contexts.
-
-For a video or code walkthrough, start with `src/components/Model3D.tsx`, then follow the data flow from `src/data/products.ts` into `src/components/ProductCard.tsx` and `src/ProductPage.tsx`.
-
-## Running on Apple Vision Pro tooling
-
-Build the app and launch it through the WebSpatial builder flow:
+To validate the spatial model path, run:
 
 ```bash
 npm run avp
 ```
 
-This script builds the Vite app and runs:
+This builds the app and runs:
 
 ```bash
 webspatial-builder run --base=http://localhost:5173
 ```
 
-Use this path when you want to validate the WebSpatial model rendering path.
+Use this flow when testing the WebSpatial `<Model>` rendering behavior. Standard browsers will intentionally show thumbnail fallbacks instead.
 
 ## Building for production
-
-Run the TypeScript check and production build:
 
 ```bash
 npm run build
 ```
 
-Preview the production build locally:
+The production output is generated by Vite and can be served by any static host.
 
-```bash
-npm run preview
-```
+## Deployment
 
-## Deploying
-
-The project is ready to deploy to Vercel:
+The repository includes Vercel configuration and can be deployed with:
 
 ```bash
 vercel deploy --prod
 ```
 
-If you connect the repository to a Vercel project, pushes to the production branch can trigger production deployments automatically.
+If the repository is connected to Vercel, pushes to the production branch can trigger deployments automatically.
 
-## Guided project ideas
+## Customizing the catalog
 
-Use this starter as a foundation for learning WebSpatial by trying these exercises:
-
-1. Add another product to `src/data/products.ts` with a thumbnail and model asset.
-2. Adjust `Model3D` so unsupported browsers show a custom callout next to the thumbnail.
-3. Add spatial interactions such as tap, drag, rotate, or magnify handlers to supported model views.
-4. Experiment with model scale and depth using the CSS custom properties on the product media containers.
-5. Replace the sample storefront copy with your own product domain.
+- Add or edit products in `src/data/products.ts`.
+- Place thumbnails and GLB models under `public/models/`.
+- Keep product asset paths relative to `import.meta.env.BASE_URL` using the existing `publicAsset` helper.
+- Update storefront and product page copy in `src/MainPage.tsx` and `src/ProductPage.tsx`.
+- Adjust model sizing and fallback presentation in `src/components/Model3D.css` and the page-level CSS files.
 
 ## Asset attribution
 
@@ -156,6 +146,6 @@ If you redistribute this project or replace the sample assets, review the licens
 
 ## License
 
-Source code in this repository is intended to be published under the MIT License. Add the matching `LICENSE` file before public release.
+Source code in this repository is available under the [MIT License](LICENSE).
 
 The included 3D assets remain subject to their source asset licenses. See [Asset attribution](#asset-attribution) for source links.
